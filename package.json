@@ -1,0 +1,49 @@
+{
+  "name": "drfrostmaths",
+  "version": "1.0.0",
+  "description": "DrFrostMaths in Desktop App.",
+  "main": "main.js",
+  "scripts": {
+    "test": "npm run start",
+    "start": "electron .",
+    "build": "electron-builder build",
+    "build:osx": "electron-builder build --mac",
+    "build:win": "electron-builder build --win",
+    "build:all": "npm run build:win && npm run build:osx",
+    "pack": "npm run build"
+  },
+  "author": "SSKATE <minsu_kim@bishanoi.net>",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^21.2.3",
+    "electron-builder": "^23.6.0",
+    "path": "^0.12.7"
+  },
+  "build": {
+    "productName": "DrFrostMaths",
+    "appId": "drfrostmaths",
+    "mac": {
+      "target": [
+        "default"
+      ],
+      "icon": "assets/icons/favicon.icns"
+    },
+    "dmg": {
+      "title": "DrFrostMaths",
+      "icon": "assets/icons/favicon.icns"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32",
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "icon": "assets/icons/logo.png"
+    }
+  }
+}
